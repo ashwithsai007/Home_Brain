@@ -14,14 +14,15 @@
    cp .env.example .env.local
 
 4) Add keys in .env.local
-   OPENAI_API_KEY="sk-..."
-   ANTHROPIC_API_KEY="sk-ant-..."
-   (optional) COUPONAI_API_KEY="..."
 
-5) Run
+   OPENAI_API_KEY="sk-..."
+
+   ANTHROPIC_API_KEY="sk-ant-..."
+
+6) Run
    npm run dev
 
-6) Open
+7) Open
    http://localhost:3000
 
 
