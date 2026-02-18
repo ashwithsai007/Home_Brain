@@ -1,0 +1,137 @@
+/* Tailwind entry (DO NOT use: @import "tailwindcss";) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #07080c;
+  color: #eef0f6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden; /* important: keep page from double-scrolling */
+}
+
+/* Stronger, visible vibe */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(1200px 900px at 15% 10%, rgba(56, 189, 248, 0.14), transparent 55%),
+    radial-gradient(1000px 800px at 90% 0%, rgba(167, 139, 250, 0.12), transparent 55%),
+    radial-gradient(900px 700px at 60% 95%, rgba(34, 197, 94, 0.08), transparent 58%),
+    radial-gradient(700px 500px at 10% 85%, rgba(244, 63, 94, 0.06), transparent 60%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(0, 0, 0, 0) 40%,
+      rgba(0, 0, 0, 0.12) 100%
+    );
+  filter: saturate(120%) contrast(105%);
+}
+
+/* Make app content appear above background layer
+   App Router doesn't always use #__next, so include body > div too */
+#__next,
+body > div {
+  position: relative;
+  z-index: 1;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.22);
+}
+
+/* scrollbars */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(82, 82, 91, 0.85);
+  border-radius: 999px;
+  border: 2px solid rgba(7, 8, 12, 0.9);
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(113, 113, 122, 0.9);
+}
+*::-webkit-scrollbar-track {
+  background: rgba(7, 8, 12, 0.95);
+}
+
+/* pretty normal-text styles */
+.prose-hb {
+  line-height: 1.7;
+  font-size: 15px;
+}
+.prose-hb p {
+  margin: 0.65rem 0;
+  color: rgba(244, 244, 245, 0.92);
+}
+.prose-hb strong {
+  color: rgba(255, 255, 255, 0.97);
+  font-weight: 700;
+}
+.prose-hb a {
+  color: rgba(56, 189, 248, 0.95);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.35);
+  text-decoration: none;
+}
+.prose-hb a:hover {
+  border-bottom-color: rgba(56, 189, 248, 0.8);
+}
+.prose-hb h1,
+.prose-hb h2,
+.prose-hb h3 {
+  margin-top: 1.1rem;
+  margin-bottom: 0.6rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+.prose-hb h1 {
+  font-size: 1.25rem;
+}
+.prose-hb h2 {
+  font-size: 1.08rem;
+  color: rgba(224, 231, 255, 0.98);
+}
+.prose-hb h3 {
+  font-size: 1rem;
+  color: rgba(167, 243, 208, 0.98);
+}
+.prose-hb ul,
+.prose-hb ol {
+  margin: 0.55rem 0;
+  padding-left: 1.2rem;
+}
+.prose-hb ul li::marker {
+  color: rgba(56, 189, 248, 0.9);
+}
+.prose-hb ol li::marker {
+  color: rgba(167, 139, 250, 0.95);
+  font-weight: 700;
+}
+.prose-hb blockquote {
+  margin: 0.8rem 0;
+  padding: 0.7rem 0.9rem;
+  border-left: 3px solid rgba(56, 189, 248, 0.55);
+  background: rgba(24, 24, 27, 0.55);
+  border-radius: 12px;
+}
+.prose-hb code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 12.5px;
+  padding: 0.12rem 0.35rem;
+  border-radius: 8px;
+  background: rgba(39, 39, 42, 0.75);
+  border: 1px solid rgba(63, 63, 70, 0.55);
+  color: rgba(250, 250, 250, 0.92);
+}
